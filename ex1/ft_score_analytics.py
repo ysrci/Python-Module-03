@@ -14,7 +14,7 @@ if __name__ == "__main__":
             list_int.append(int(my_list[i]))
             i += 1
     except ValueError:
-        print(f"oops, I typed ’{my_list[i]}’ instead of ’1000’")
+        print(f"oops, I typed '{my_list[i]}' instead of '1000'")
         x = 0
 
     if len(list_int) == 0:

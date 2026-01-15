@@ -1,6 +1,7 @@
 #!/usr/bin/python3.10
 
 def game_events_stream(n):
+    """Information for stream game events"""
     players = ["alice", "bob", "charlie"]
     actions = ["killed monster", "found treasure", "leveled up"]
 
@@ -12,31 +13,33 @@ def game_events_stream(n):
 
 
 def fibonacci_stream(n):
+    """Fibonacci Math"""
     a = 0
     b = 1
     for _ in range(n):
-        yield a 
-        a, b = b, a + b 
+        yield a
+        a, b = b, a + b
 
 
 def prime_stream(n):
+    """Prime Math"""
     count = 0
     num = 2
     while count < n:
-        is_prime = True 
+        is_prime = True
         for i in range(2, num):
             if num % i == 0:
                 is_prime = False
                 break
         if is_prime:
-            yield num 
+            yield num
             count += 1
         num += 1
 
 
 if __name__ == "__main__":
     print("=== Game Data Stream Processor ===")
-    print("Processing 1000 game exents...")
+    print("\nProcessing 1000 game events...\n")
 
     total_events = 0
     high_level = 0
@@ -47,14 +50,16 @@ if __name__ == "__main__":
         total_events += 1
 
         if level >= 10:
-            high_level += 1 
+            high_level += 1
         if action == "found treasure":
-            treasure_events += 1 
+            treasure_events += 1
         if action == "leveled up":
-            level_up_events += 1 
+            level_up_events += 1
 
         if event_id <= 3:
-            print(f"Event {event_id}: Player {player} (level {level}) {action}")
+            print(
+                f"Event {event_id}: Player {player} (level {level}) {action}")
+    print("...")
 
     print("\n=== Stream Analytics ===")
     print(f"Total events processed: {total_events}")
@@ -68,8 +73,9 @@ if __name__ == "__main__":
     print("\n=== Generator Demonstration ===")
     print("Fibonacci sequence (first 10):", end=" ")
     for n in fibonacci_stream(10):
-        print(n, end=" ")
+        print(n, end=", ")
 
     print("\nPrime numbers (first 5):", end=" ")
     for p in prime_stream(5):
-        print(p, end=" ")
+        print(p, end=", ")
+    print("")

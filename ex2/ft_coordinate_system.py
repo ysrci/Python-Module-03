@@ -3,6 +3,7 @@ import math
 
 
 def distance_3d(p1, p2):
+    """ Distance 3D"""
     x1, y1, z1 = p1
     x2, y2, z2 = p2
     return (math.sqrt((x2 - x1)**2 +
@@ -11,6 +12,7 @@ def distance_3d(p1, p2):
 
 
 def parse_coordinates(coort_str):
+    """Parse Coordinates"""
     parts = coort_str.split(",")
     try:
         return (int(parts[0]),

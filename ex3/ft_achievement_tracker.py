@@ -27,7 +27,7 @@ if __name__ == "__main__":
     print(f"Total unique achievements: {len(union_)}")
 
     inter_ = alice.intersection(bob).intersection(charlie)
-    print(f"Common to all players: {inter_}")
+    print(f"\nCommon to all players: {inter_}")
 
     diff_ = union_.difference(
         alice.intersection(bob)
